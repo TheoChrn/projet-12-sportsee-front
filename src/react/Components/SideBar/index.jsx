@@ -14,7 +14,7 @@ const icons = [
 
 const SideBar = () => {
   return (
-    <div className={styles.sideBar}>
+    <nav className={styles.sideBar}>
       <ul className={styles.sideBarItems}>
         {icons.map((icon) => {
           return (
@@ -25,7 +25,7 @@ const SideBar = () => {
         })}
         <p className={styles.sideBarCopyright}>Copiryght, SportSee 2020</p>
       </ul>
-    </div>
+    </nav>
   );
 };
 
