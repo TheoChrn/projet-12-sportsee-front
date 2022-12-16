@@ -12,18 +12,23 @@ const icons = [
   <HaltereIcone width={"36px"} height={"36px"} />,
 ];
 
+/**
+ *
+ * @returns HTML Elements for the side navigation bar
+ */
+
 const SideBar = () => {
   return (
     <nav className={styles.sideBar}>
       <ul className={styles.sideBarItems}>
-        {icons.map((icon) => {
+        {icons.map((icon, index) => {
           return (
-            <li className={styles.sideBarItem}>
+            <li key={index} className={styles.sideBarItem}>
               <button>{icon}</button>
             </li>
           );
         })}
-        <p className={styles.sideBarCopyright}>Copiryght, SportSee 2020</p>
+        <p className={styles.sideBarCopyright}>Copyright, SportSee 2020</p>
       </ul>
     </nav>
   );
