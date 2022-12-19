@@ -12,7 +12,6 @@ const Activity = ({ userId }) => {
       return;
     }
     setUserActivity(userData.sessions);
-    console.log(userActivity);
   };
 
   useEffect(() => {

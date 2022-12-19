@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { getUserById } from "../../../API/Api";
 import Activity from "../../Components/Activity";
 import Navigation from "../../Components/Navigation";
+import AverageSessions from "../../Components/Sessions";
 import SideBar from "../../Components/SideBar";
 import styles from "./styles.module.scss";
 
@@ -37,7 +38,8 @@ const Dashboard = () => {
             </h1>
             <h2>Félicitation ! Vous avez explosé vos objectifs hier 👏</h2>
             <section className={styles.userInformations}>
-              <Activity userId={user.id}/>
+              <Activity userId={user.id} />
+              <AverageSessions userId={user.id} />
             </section>
           </div>
         </main>
