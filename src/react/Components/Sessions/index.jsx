@@ -2,7 +2,7 @@ import React from "react";
 import { useEffect } from "react";
 import { useState } from "react";
 import { getUserAverageSession } from "../../../API/Api";
-import AverageSessionsChart from "./SessionsBarChart";
+import AverageSessionsChart from "./SessionsLineChart";
 import styles from "./styles.module.scss";
 
 const AverageSessions = ({ userId }) => {
@@ -14,7 +14,6 @@ const AverageSessions = ({ userId }) => {
       return;
     }
     setUserAverageSessions(userData.sessions);
-    console.log(userAverageSessions);
   };
 
   useEffect(() => {
