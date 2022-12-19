@@ -13,7 +13,7 @@ import {
 import styles from "./styles.module.scss";
 const ActivityBarChart = ({ sessions }) => {
   return (
-    <ResponsiveContainer height={145} className={styles.container}>
+    <ResponsiveContainer className={styles.container}>
       <BarChart
         data={sessions}
         barGap={0}

@@ -11,7 +11,6 @@ import {
 import styles from "./styles.module.scss";
 
 const IntensityRadarChart = ({ data, subjects }) => {
-  console.log(data);
   return (
     <ResponsiveContainer className={styles.container}>
       <RadarChart outerRadius={90} data={data}>

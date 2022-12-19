@@ -4,6 +4,7 @@ import { getUserById } from "../../../API/Api";
 import Activity from "../../Components/Activity";
 import Intensity from "../../Components/Intensity";
 import Navigation from "../../Components/Navigation";
+import Score from "../../Components/Score";
 import AverageSessions from "../../Components/Sessions";
 import SideBar from "../../Components/SideBar";
 import styles from "./styles.module.scss";
@@ -42,6 +43,7 @@ const Dashboard = () => {
               <Activity userId={user.id} />
               <AverageSessions userId={user.id} />
               <Intensity userId={user.id} />
+              <Score userId={user.id} />
             </section>
           </div>
         </main>

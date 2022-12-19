@@ -20,7 +20,9 @@ const Activity = ({ userId }) => {
   return (
     <section className={styles.userActivity}>
       <h1 className={styles.dailyActivity}>Activité quotidienne</h1>
-      {userActivity !== null && <ActivityBarChart sessions={userActivity} />}
+      {userActivity !== null && (
+        <ActivityBarChart sessions={userActivity}/>
+      )}
     </section>
   );
 };
