@@ -23,13 +23,13 @@ Projet 12 - Dévloppez un tableau de bord d'analytics avec React
 
 Go to the back directory
 
-```
+```bash
 cd .\P12-front-end-dashboard-back\
 ```
 
 Run API
 
-```
+```bash
 npm run dev
 ```
 
@@ -37,13 +37,13 @@ npm run dev
 
 Go to the front directory
 
-```
+```bash
 cd .\projet-12-sportsee-front\
 ```
 
 Run Front
 
-```
+```bash
 npm run dev
 ```
 
