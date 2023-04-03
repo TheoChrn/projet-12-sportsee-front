@@ -53,7 +53,7 @@ npm run dev
 
 Turn off API
 
-Go to `cd .\P12-front-end-dashboard-back\src\Context\UserContext.jsx`
+Go to `cd .\projet-12-sportsee-front\src\Context\UserContext.jsx`
 
 ```javascript
 const isMockedMod = false;
@@ -62,7 +62,7 @@ const isMockedMod = false;
 
 ### Change user data
 
-Go to `cd .\P12-front-end-dashboard-back\src\Context\UserContext.jsx`
+Go to `cd .\projet-12-sportsee-front\src\Context\UserContext.jsx`
 
 ```javascript
 const userId = 12;
