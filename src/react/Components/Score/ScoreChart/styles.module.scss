@@ -2,11 +2,19 @@
   display: flex;
   justify-content: center;
   width: 100%;
+  word-wrap: break-word;
 }
 
 .p {
   position: absolute;
   font-size: 16px;
-  top: 60%;
+  top: 57%;
   transform: translateY(-50%);
+  line-height: 26px;
+}
+
+@media (width < 1440px) {
+  .p {
+    font-size: 12px;
+  }
 }

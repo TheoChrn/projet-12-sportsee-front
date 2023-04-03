@@ -36,3 +36,9 @@ button {
   white-space: nowrap;
   margin-top: 75%;
 }
+
+@media (width < 1440px) {
+  .sideBar {
+    padding-top: 50px;
+  }
+}

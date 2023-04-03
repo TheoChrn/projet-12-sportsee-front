@@ -1,0 +1,30 @@
+.user {
+  font-size: 48px;
+  margin-bottom: 40px;
+}
+
+.userName {
+  color: #ff0101;
+}
+
+.congrats {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0px;
+  text-align: left;
+}
+
+.userInformations {
+  display: grid;
+  gap: 30px;
+  grid-template-columns: repeat(4, 1fr);
+  margin-top: 30px;
+}
+
+@media (width < 1440px) {
+  .userInformations {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    min-width: fit-content;
+  }
+}

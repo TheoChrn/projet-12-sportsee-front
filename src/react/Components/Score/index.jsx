@@ -1,30 +1,26 @@
-import React, { useEffect, useState } from "react";
-import { getUserActivityById, getUserById } from "../../../API/Api";
+import React, { useContext, useEffect, useState } from "react";
+import { getUserById } from "../../../API/Api";
 import ScoreChart from "./ScoreChart";
 import styles from "./styles.module.scss";
+import { UserContext } from "../../Context/UserContext";
 
-const Score = ({ userId }) => {
-  const [userScore, setUserScore] = useState(null);
+const Score = () => {
+  const { userData, loading, hasError } = useContext(UserContext);
 
-  const loadActivity = async () => {
-    const userData = await getUserById(userId);
-    if (!userData) {
-      return;
-    }
-    console.log(userData);
-    setUserScore(
-      userData.score ? userData.score * 100 : userData.todayScore * 100
-    );
-  };
+  if (loading || hasError) {
+    return <></>;
+  }
 
-  useEffect(() => {
-    loadActivity();
-  });
   return (
     <section className={styles.userScore}>
-      {userScore !== null && (
+      <h2 className={styles.score}>Score</h2>
+      {userData !== null && (
         <ScoreChart
-          score={userScore}
+          score={
+            userData.user.todayScore
+              ? userData.user.todayScore * 100
+              : userData.user.score * 100
+          }
           size={250}
           strokeWidth={15}
           color={"#FF0000"}

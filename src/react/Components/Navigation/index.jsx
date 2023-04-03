@@ -12,7 +12,7 @@ const Navigation = () => {
       <nav className={styles.nav}>
         <img src={Logo} alt="logo" className={styles.logo} />
         <ul className={styles.navItems}>
-          <NavLink to="" className={styles.navItem}>
+          <NavLink to="/" className={styles.navItem}>
             Accueil
           </NavLink>
           <NavLink to="" className={styles.navItem}>

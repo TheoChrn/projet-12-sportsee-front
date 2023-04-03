@@ -9,14 +9,31 @@ import {
   ResponsiveContainer,
 } from "recharts";
 import styles from "./styles.module.scss";
+import PropTypes from "prop-types";
 
-const IntensityRadarChart = ({ data, subjects }) => {
+const IntensityRadarChart = ({ data }) => {
+  const names = [
+    "Intensité",
+    "Vitesse",
+    "Force",
+    "Endurance",
+    "Energie",
+    "Cardio",
+  ];
   return (
     <ResponsiveContainer className={styles.container}>
-      <RadarChart outerRadius={90} data={data}>
-        <PolarGrid />
-        <PolarAngleAxis axisLine={false} dataKey={"kind"} />
-        <PolarRadiusAxis tick={false} angle={30} />
+      <RadarChart data={data} outerRadius={"60%"}>
+        <PolarGrid stroke="#FFF" radialLines={false} />
+        <PolarAngleAxis
+          stroke="#FFF"
+          tickLine={false}
+          dy={4}
+          tickFormatter={(value) => names[value]}
+          tick={{
+            fontSize: "12px",
+            fontWeight: "500",
+          }}
+        />
         <Radar
           dataKey="value"
           stroke="#FF0101B2"
@@ -29,3 +46,8 @@ const IntensityRadarChart = ({ data, subjects }) => {
 };
 
 export default IntensityRadarChart;
+
+IntensityRadarChart.propTypes = {
+  kind: PropTypes.objectOf(PropTypes.number),
+  value: PropTypes.objectOf(PropTypes.number),
+};

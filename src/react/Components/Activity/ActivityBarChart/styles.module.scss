@@ -2,3 +2,31 @@
   display: flex;
   justify-content: flex-end;
 }
+
+.customTooltip {
+  background-color: red;
+  height: 70px;
+  width: 50px;
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  border: none;
+  border-color: red;
+  & ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+    & li {
+      text-align: center;
+      color: white;
+      font-size: 12px;
+    }
+  }
+}
+
+.legendColor {
+  color: #74798c;
+  font-weight: 500;
+  font-size: 14px;
+}

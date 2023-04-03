@@ -1,27 +1,22 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { getUserActivityById } from "../../../API/Api";
 import ActivityBarChart from "./ActivityBarChart";
 import styles from "./styles.module.scss";
+import { UserContext } from "../../Context/UserContext";
 
-const Activity = ({ userId }) => {
-  const [userActivity, setUserActivity] = useState(null);
+const Activity = () => {
+  const { userData, loading } = useContext(UserContext);
 
-  const loadActivity = async () => {
-    const userData = await getUserActivityById(userId);
-    if (!userData) {
-      return;
-    }
-    setUserActivity(userData.sessions);
-  };
+  if (loading) {
+    return <></>;
+  }
 
-  useEffect(() => {
-    loadActivity();
-  });
+  const userActivity = userData.activity;
   return (
     <section className={styles.userActivity}>
       <h1 className={styles.dailyActivity}>Activité quotidienne</h1>
       {userActivity !== null && (
-        <ActivityBarChart sessions={userActivity}/>
+        <ActivityBarChart sessions={userActivity.sessions} />
       )}
     </section>
   );

@@ -2,9 +2,17 @@ import React from "react";
 import { useEffect } from "react";
 import { useState } from "react";
 import styles from "./styles.module.scss";
+import PropTypes from "prop-types";
 
+/**
+ * Renders the score chart
+ * @param {number} score
+ * @param {number} size
+ * @param {number} strokeWidth
+ * @param {string} color
+ * @returns {JSX.Element}
+ */
 const ScoreChart = ({ score, size, strokeWidth, color }) => {
-  console.log(score);
   const [progress, setProgress] = useState(0);
   useEffect(() => {
     setProgress(score);
@@ -19,14 +27,13 @@ const ScoreChart = ({ score, size, strokeWidth, color }) => {
       <svg width={"80%"} height={"80%"} viewBox={viewBox}>
         <circle
           fill="none"
-          stroke="#FFFFFF"
           cx={size / 2}
           cy={size / 2}
           r={radius}
           strokeWidth={`${strokeWidth}px`}
         />
         <circle
-          fill="none"
+          fill="#FFF"
           stroke={color}
           cx={size / 2}
           cy={size / 2}
@@ -40,7 +47,7 @@ const ScoreChart = ({ score, size, strokeWidth, color }) => {
           fill="black"
           fontSize="40px"
           x="50%"
-          y="50%"
+          y="45%"
           dy="20px"
           textAnchor="middle"
         >
@@ -53,3 +60,10 @@ const ScoreChart = ({ score, size, strokeWidth, color }) => {
 };
 
 export default ScoreChart;
+
+ScoreChart.propTypes = {
+  score: PropTypes.number.isRequired,
+  size: PropTypes.number.isRequired,
+  strokeWidth: PropTypes.number.isRequired,
+  color: PropTypes.string.isRequired,
+};

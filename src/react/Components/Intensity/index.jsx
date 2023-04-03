@@ -1,30 +1,20 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { getUserPerformance } from "../../../API/Api";
 import IntensityRadarChart from "./IntensityRadarChart";
-
+import { UserContext } from "../../Context/UserContext";
 import styles from "./styles.module.scss";
 
-const Intensity = ({ userId }) => {
-  const [userIntensity, setUserIntensity] = useState(null);
-  const [userSubjects, setUserSubjects] = useState(null);
+const Intensity = () => {
+  const { userData, loading, hasError } = useContext(UserContext);
 
-  const loadActivity = async () => {
-    const userData = await getUserPerformance(userId);
-    if (!userData) {
-      return;
-    }
-    setUserIntensity(userData.data);
-    setUserSubjects(userData.kind);
-  };
+  if (loading || hasError) {
+    return <></>;
+  }
 
-  useEffect(() => {
-    loadActivity();
-  });
+  const userIntensity = userData.performance.data;
   return (
     <section className={styles.userIntensity}>
-      {userIntensity && userSubjects !== null && (
-        <IntensityRadarChart data={userIntensity} subjects={userSubjects} />
-      )}
+      {userIntensity !== null && <IntensityRadarChart data={userIntensity} />}
     </section>
   );
 };

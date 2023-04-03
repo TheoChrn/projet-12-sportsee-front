@@ -10,10 +10,11 @@
     "sass": "sass ./src/sass/main.scss ./src/index.css --watch"
   },
   "dependencies": {
+    "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.4.5",
-    "recharts": "^2.2.0",
+    "recharts": "^2.5.0",
     "sass": "^1.56.2",
     "vite-plugin-svgr": "^2.4.0"
   },

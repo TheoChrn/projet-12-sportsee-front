@@ -1,0 +1,12 @@
+.userIntake {
+  display: grid;
+  grid-row: 1 / span 2;
+  grid-column: 4 / 4;
+}
+
+@media (width < 1440px) {
+  .userIntake {
+    grid-row: 3 / 3;
+    grid-column: 1 / 4;
+  }
+}

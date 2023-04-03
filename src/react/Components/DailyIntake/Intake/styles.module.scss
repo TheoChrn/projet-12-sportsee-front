@@ -1,0 +1,74 @@
+.container {
+  display: grid;
+  grid-template-rows: repeat(4, 1fr);
+  gap: 40px;
+}
+
+.intake {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: #fbfbfb;
+  border-radius: 6px;
+  gap: 25px;
+  padding: 32px;
+}
+
+.intakeIcone {
+  background-color: rgba(192, 192, 192, 0.1);
+  border-radius: 6px;
+  display: flex;
+  width: 90px;
+  height: 90px;
+  align-items: center;
+  justify-content: center;
+}
+
+.intakeIcone--red,
+.intakeIcone--blue,
+.intakeIcone--yellow,
+.intakeIcone--pink {
+}
+
+.intakeIconeRed {
+  padding: 5px;
+  background-color: #ff0000;
+}
+
+.intakeIconeBlue {
+  background-color: #4ab8ff1a;
+}
+
+.intakeIconeYellow {
+  background-color: #f9ce23;
+}
+
+.intakeIconePink {
+  background-color: #fd51811a;
+}
+
+.intakeInfos {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.intakeData {
+  font-size: 20px;
+}
+
+.intakeValue {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+@media (width < 1440px) {
+  .container {
+    grid-template-rows: none;
+    grid-template-columns: repeat(2, 1fr);
+
+    .intake {
+      padding: 30px 30px;
+    }
+  }
+}

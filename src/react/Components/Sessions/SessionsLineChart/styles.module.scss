@@ -1,0 +1,45 @@
+.container {
+  overflow: hidden;
+}
+
+.customTooltip {
+  background-color: white;
+  height: 30px;
+  width: 50px;
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  border: none;
+
+  & ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+    & li {
+      text-align: center;
+      color: black;
+      font-size: 12px;
+    }
+  }
+}
+
+.sessionTitle {
+  color: white;
+  font-size: 15px;
+  line-height: 30px;
+  width: 75%;
+  font-weight: 500;
+  margin-left: 2%;
+  margin-top: 2%;
+  opacity: 0.5;
+}
+
+.customBackground {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: none;
+  opacity: 0.5;
+  overflow: hidden;
+}
