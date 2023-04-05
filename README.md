@@ -19,21 +19,7 @@ Projet 12 - Dévloppez un tableau de bord d'analytics avec React
 
 ## Run Project
 
-### Run Api
-
-Go to the back directory
-
-```bash
-cd .\P12-front-end-dashboard-back\
-```
-
-Run API
-
-```bash
-npm run dev
-```
-
-### Run Front
+Before running front make sure the API is running
 
 Go to the front directory
 
