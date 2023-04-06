@@ -17,38 +17,44 @@ import {
 import styles from "./styles.module.scss";
 import PropTypes from "prop-types";
 
+/**
+ * @returns {arrayOf(object)} that will be used to replace the XAxis values by custom labels
+ */
+const customXTicks = [
+  { value: 1, label: "L" },
+  { value: 2, label: "M" },
+  { value: 3, label: "M" },
+  { value: 4, label: "J" },
+  { value: 5, label: "V" },
+  { value: 6, label: "S" },
+  { value: 7, label: "D" },
+];
+
+/**
+ * @param {object} props
+ * @returns {SVGRect} that take all the width from the cursor to the right with an 0.5 opacity
+ */
+const CustomCursor = (props) => {
+  const { points, width, height } = props;
+  const { x } = points[0];
+
+  return (
+    <Rectangle
+      fill="rgba(0,0,0,0.3)"
+      stroke="none"
+      x={x}
+      y={0}
+      width={width}
+      height={height}
+    />
+  );
+};
+
+/**
+ * @param {object} sessions The data of the user average sessions
+ * @returns a LineChart based on user average sessions
+ */
 const AverageSessionsChart = ({ sessions }) => {
-  const customXTicks = [
-    { value: 1, label: "L" },
-    { value: 2, label: "M" },
-    { value: 3, label: "M" },
-    { value: 4, label: "J" },
-    { value: 5, label: "V" },
-    { value: 6, label: "S" },
-    { value: 7, label: "D" },
-  ];
-
-  /**
-   * 
-   * @param {*} props 
-   * @returns {SVGRect} that take all the width from the cursor to the right with an 0.5 opacity
-   */
-  const CustomCursor = (props) => {
-    const { points, width, height } = props;
-    const { x } = points[0];
-
-    return (
-      <Rectangle
-        fill="rgba(0,0,0,0.3)"
-        stroke="none"
-        x={x}
-        y={0}
-        width={width}
-        height={height}
-      />
-    );
-  };
-
   return (
     <ResponsiveContainer className={styles.container}>
       <LineChart
@@ -108,7 +114,6 @@ const AverageSessionsChart = ({ sessions }) => {
           }}
         />
         <Line
-
           stroke="#FFF"
           strokeWidth={2}
           type="natural"

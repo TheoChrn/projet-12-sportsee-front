@@ -6,10 +6,10 @@ import PropTypes from "prop-types";
 
 /**
  * Renders the score chart
- * @param {number} score
- * @param {number} size
- * @param {number} strokeWidth
- * @param {string} color
+ * @param {number} score // The score of the Data
+ * @param {number} size // The size of the circle
+ * @param {number} strokeWidth // The width of the circle's stroke
+ * @param {string} color // The color which fills the circle
  * @returns {JSX.Element}
  */
 const ScoreChart = ({ score, size, strokeWidth, color }) => {

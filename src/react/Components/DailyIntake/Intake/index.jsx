@@ -37,6 +37,7 @@ const Intake = ({ keyData, size }) => {
       color="Pink"
     />,
   ];
+  
   return (
     <div className={styles.container}>
       {icons.map((icone, index) => {

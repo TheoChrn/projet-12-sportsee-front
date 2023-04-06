@@ -5,6 +5,12 @@ import { ReactComponent as CyclisteIcone } from "../../../assets/icon-cycliste.s
 import { ReactComponent as HaltereIcone } from "../../../assets/icon-haltere.svg";
 import styles from "./styles.module.scss";
 
+/**
+ * Create ReactComponant for pictures
+ * @param {number} width the width of the picture
+ * @param {number} height the height of the picture
+ * @returns {arrayOf(ReactComponent)}
+ */
 const icons = [
   <MeditationIcone width={"36px"} height={"36px"} />,
   <NatationIcone width={"36px"} height={"36px"} />,
@@ -13,8 +19,8 @@ const icons = [
 ];
 
 /**
- *
- * @returns HTML Elements for the side navigation bar
+ * Render the side bar on the dashboard
+ * @returns {HTMLElement} for the side navigation bar
  */
 
 const SideBar = () => {

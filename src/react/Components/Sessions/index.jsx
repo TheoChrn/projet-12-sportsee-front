@@ -5,6 +5,10 @@ import AverageSessionsChart from "./SessionsLineChart";
 import { UserContext } from "../../Context/UserContext";
 import styles from "./styles.module.scss";
 
+/**
+ * Wait for the context data
+ * @returns {JSX.Element} if data
+ */
 const AverageSessions = () => {
   const { userData, loading, hasError } = useContext(UserContext);
 

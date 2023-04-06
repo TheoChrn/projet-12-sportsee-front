@@ -13,6 +13,11 @@ import {
 import styles from "./styles.module.scss";
 import PropTypes from "prop-types";
 
+/**
+ * Render chart
+ * @param {object} sessions
+ * @returns
+ */
 const ActivityBarChart = ({ sessions }) => {
   return (
     <ResponsiveContainer className={styles.container} width="100%">

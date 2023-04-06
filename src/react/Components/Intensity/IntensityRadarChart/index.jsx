@@ -11,15 +11,16 @@ import {
 import styles from "./styles.module.scss";
 import PropTypes from "prop-types";
 
+const names = [
+  "Intensité",
+  "Vitesse",
+  "Force",
+  "Endurance",
+  "Energie",
+  "Cardio",
+];
+
 const IntensityRadarChart = ({ data }) => {
-  const names = [
-    "Intensité",
-    "Vitesse",
-    "Force",
-    "Endurance",
-    "Energie",
-    "Cardio",
-  ];
   return (
     <ResponsiveContainer className={styles.container}>
       <RadarChart data={data} outerRadius={"60%"}>
