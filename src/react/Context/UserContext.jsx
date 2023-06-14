@@ -11,8 +11,8 @@ export const UserProvider = ({ children }) => {
   const [userData, setUserData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [hasError, setHasError] = useState(false);
-  const userId = 12;
-  const isMockedMod = false;
+  const userId = 18;
+  const isMockedMod = true;
 
   class UserData {
     constructor(user, activity, sessions, performance) {
@@ -40,7 +40,6 @@ export const UserProvider = ({ children }) => {
           )
         );
         setLoading(false);
-        console.log("Voilà les données mocké");
       };
       loadData();
     } else {
@@ -83,8 +82,6 @@ export const UserProvider = ({ children }) => {
           })
           .catch((error) => {
             setHasError(true);
-            console.log(error);
-            console.log("impossible de trouver les données");
           })
           .finally(() => {
             setLoading(false);
